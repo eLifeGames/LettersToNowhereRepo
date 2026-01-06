@@ -4,6 +4,10 @@
 This project is WIP
 ```
 
+### REVIEW
+- PlayerController
+- SceneInstaller
+
 ### TODO
 - Letters
   - Letter Box (Where you get the letters)
