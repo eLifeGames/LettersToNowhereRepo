@@ -1,0 +1,19 @@
+{
+    "name": "MovementFeature.Infrastructure",
+    "rootNamespace": "MovementFeature.Infrastructure",
+    "references": [
+        "GUID:d71573b6fa266eb41a53e45e7f1cae30",
+        "GUID:6dafc82978cbcd543b634021adc26d8b",
+        "GUID:19a368f2d59904746a8ef0002f7ace18",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
