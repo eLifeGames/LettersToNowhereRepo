@@ -28,8 +28,7 @@ namespace _Root.MovementFeature.Infrastructure
 
         private void InitializeRigidbody()
         {
-            _rigidbody ??= GetComponent<Rigidbody2D>();
-            
+            // REVIEW
             _rigidbody.gravityScale = 0f; // zero gravity
             _rigidbody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
             _rigidbody.sleepMode = RigidbodySleepMode2D.NeverSleep; // REVIEW - Оставлять или не
