@@ -1,5 +1,6 @@
 
 
+using _Root.MovementFeature.Domain;
 using UnityEngine;
 
 namespace _Root.Shared.Ports.MovementFeature
@@ -8,5 +9,6 @@ namespace _Root.Shared.Ports.MovementFeature
     {
         public void Move(Vector2 direction);
         public void Rotate(Vector2 direction); // TODO
+        public void SetMovementLock(MovementLock movementLock);
     }
 }
