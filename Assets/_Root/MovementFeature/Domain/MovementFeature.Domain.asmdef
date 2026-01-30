@@ -1,7 +1,7 @@
 {
     "name": "MovementFeature.Domain",
     "rootNamespace": "MovementFeature.Domain",
-    "references": [],
+    "references": ["GUID:19a368f2d59904746a8ef0002f7ace18"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
