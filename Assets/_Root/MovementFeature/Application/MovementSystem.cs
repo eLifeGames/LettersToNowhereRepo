@@ -1,8 +1,6 @@
 using _Root.MovementFeature.Domain;
 using _Root.Shared.Ports.Input;
 using _Root.Shared.Ports.MovementFeature;
-using UnityEngine;
-using Zenject;
 
 namespace _Root.MovementFeature.Application
 {

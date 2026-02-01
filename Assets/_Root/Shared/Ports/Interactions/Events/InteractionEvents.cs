@@ -7,6 +7,7 @@ namespace _Root.Shared.Ports.Interactions.Events
         
     }
 
+    // Событие взаимодействия с дверью, содержащее порт для управления движением
     public class DoorInteractionEvent : InteractionEvent
     {
         public IMovePort MovePort { get; }

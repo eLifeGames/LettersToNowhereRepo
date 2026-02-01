@@ -1,7 +1,6 @@
 using _Root.MovementFeature.Application;
 using _Root.MovementFeature.Domain;
 using _Root.Shared.Ports.MovementFeature;
-
 using UnityEngine;
 using Zenject;
 
@@ -18,7 +17,11 @@ namespace _Root.MovementFeature.Infrastructure
         private MovementModel _movementModel;
 
         [Inject]
-        public void Construct(MovementState movementState, MovementSystem movementSystem, MovementModel movementModel)
+        public void Construct(
+            MovementState movementState, 
+            MovementSystem movementSystem, 
+            MovementModel movementModel
+        )
         {
             _movementState = movementState;
             _movementSystem = movementSystem;

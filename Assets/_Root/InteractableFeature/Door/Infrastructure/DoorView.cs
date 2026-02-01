@@ -24,6 +24,7 @@ namespace _Root.Player.Infrastructure
             _movementSetupUseCase = movementSetupUseCase;
         }
         
+        // Обработка взаимодействия с дверью с передачей события взаимодействия
         public void Interact(InteractionEvent interactionEvent)
         {
             if (interactionEvent is DoorInteractionEvent e)

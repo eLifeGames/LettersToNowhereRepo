@@ -11,10 +11,10 @@ using Zenject;
 namespace _Root.InteractableFeature.InteractionChecker
 {
     [RequireComponent(typeof(CircleCollider2D))]
-    public class InteractionsDetector : MonoBehaviour
+    public class InteractionsDetector : MonoBehaviour, IDisposable
     {
         private IInputPort _inputPort;
-        private List<IInteractable>  _interactables =  new List<IInteractable>();
+        private List<IInteractable> _interactables = new List<IInteractable>();
         
         [Inject]
         private void Construct(IInputPort port)
@@ -27,17 +27,24 @@ namespace _Root.InteractableFeature.InteractionChecker
         {
             var interactable = GetClosestInteractable();
             
+            // когда находим дверь и взаимодействуем с ней, вызываем событие о взаимодействии с дверью и передаем туда MovePort игрока
             if (interactable != null && interactable.Transform.gameObject.TryGetComponent<DoorView>(out var doorView))
             {
                 doorView.Interact(new DoorInteractionEvent(gameObject.GetComponentInParent<IMovePort>()));
             }
         }
 
+        public void Dispose()
+        {
+            // NOTE: Fixed
+            _inputPort.OnInteractionPressed -= InteractWithClosest;
+        }
+
         private IInteractable GetClosestInteractable()
         {
             IInteractable interactable = null;
             float closestDistance = float.MaxValue;
-            
+
             var pos = transform.position;
 
             foreach (var i in _interactables)
@@ -60,17 +67,13 @@ namespace _Root.InteractableFeature.InteractionChecker
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            var interactable = other.gameObject.GetComponent<IInteractable>();
-            if (interactable != null && !_interactables.Contains(interactable))
-            {
+            if (other.TryGetComponent<IInteractable>(out var interactable) && !_interactables.Contains(interactable))
                 _interactables.Add(interactable);
-            }
         }
         
         private void OnTriggerExit2D(Collider2D other)
         {
-            var interactable = other.GetComponent<IInteractable>();
-            if (interactable != null)
+            if (other.TryGetComponent<IInteractable>(out var interactable))
                 _interactables.Remove(interactable);
         }
     }

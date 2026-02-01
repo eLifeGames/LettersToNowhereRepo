@@ -1,6 +1,6 @@
 using Zenject;
 using UnityEngine;
-using _Root.Player.Domain;
+
 using _Root.Player.Factory;
 
 namespace _Root.Player.Infrastructure
@@ -9,11 +9,11 @@ namespace _Root.Player.Infrastructure
     {
         [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private Player _playerPrefab;
-        [SerializeField] private Transform _spawnPoint;
 
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle().WithArguments(_playerPrefab, _playerConfig).NonLazy();
+            Container.BindInterfacesAndSelfTo<PlayerEventsProvider>().AsSingle().NonLazy();
         }
     }
 }
