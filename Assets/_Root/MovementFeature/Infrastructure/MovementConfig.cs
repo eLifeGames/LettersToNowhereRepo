@@ -20,7 +20,7 @@ namespace _Root.MovementFeature.Infrastructure
         [Header("Other")]
 
         [Tooltip("Selects direction player can move")]
-        public MovementLock MovementLockSelection;
+        public MovementLock MovementLockSelection = MovementLock.Horizontal;
 
         public MovementModel ToModel()
             => new(MaxSpeed, Acceleration, Decelration, MovementLockSelection);

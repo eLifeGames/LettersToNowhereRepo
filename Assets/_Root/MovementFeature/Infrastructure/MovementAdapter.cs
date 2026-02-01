@@ -15,12 +15,14 @@ namespace _Root.MovementFeature.Infrastructure
 
         private MovementState _movementState;
         private MovementSystem _movementSystem;
+        private MovementModel _movementModel;
 
         [Inject]
-        public void Construct(MovementState movementState, MovementSystem movementSystem)
+        public void Construct(MovementState movementState, MovementSystem movementSystem, MovementModel movementModel)
         {
             _movementState = movementState;
             _movementSystem = movementSystem;
+            _movementModel = movementModel;
         }
 
 #if UNITY_EDITOR
@@ -42,7 +44,22 @@ namespace _Root.MovementFeature.Infrastructure
         public void Move(Vector2 direction)
         {
             // NOTE: позаимствовал
-            Vector2 dir = _movementState.IsMoving ? direction.normalized : Vector2.zero;
+            Vector2 dir = _movementState.IsMoving ? direction : Vector2.zero;
+
+            switch (_movementModel.MovementLock)
+            {
+                case MovementLock.Horizontal:
+                    dir.y = 0f;
+                    break;
+                case MovementLock.Vertical:
+                    dir.x = 0f;
+                    break;
+                case MovementLock.NoDirection:
+                    dir = Vector2.zero;
+                    break;
+            }
+
+            dir.Normalize();
 
             float maxSpeed = Mathf.Max(0f, _movementState.MaxSpeed); // NOTE: оставил
 

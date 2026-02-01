@@ -66,5 +66,6 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
     },
-    "dotnet.defaultSolution": "Letters To Nowhere.sln"
+    "dotnet.defaultSolution": "Letters To Nowhere.sln",
+    "discord.enabled": false
 }
