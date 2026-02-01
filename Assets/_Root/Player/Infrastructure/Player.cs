@@ -13,7 +13,6 @@ namespace _Root.Player.Infrastructure
         {
             _playerModel = playerModel;
         }
-
         // TODO
     }
 }

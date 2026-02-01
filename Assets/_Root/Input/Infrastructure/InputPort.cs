@@ -2,6 +2,7 @@ using _Root.Input.Domain;
 using _Root.Shared.Ports.Input;
 
 using System;
+using _Root.Shared.Ports.Interactions.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,7 +14,7 @@ namespace _Root.Input.Infrastructure
         private InputActions.MotionActions _playerKeys;
         private InputActions.InteractionsActions _playerInteractKeys;
 
-        public event Action OnInteractionPressed;
+        public event Action OnInteractionPressed = () => { };
 
         public Vector2 MoveInput
         {
@@ -57,7 +58,6 @@ namespace _Root.Input.Infrastructure
         private void OnInteractionPerfomed(InputAction.CallbackContext ctx)
         {
             OnInteractionPressed?.Invoke();
-            Debug.Log("Interaction performed");
         }
     }
 }

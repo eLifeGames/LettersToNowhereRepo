@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4933116570802993954}
   - component: {fileID: 1488235698217724353}
   - component: {fileID: 408744462307795040}
+  - component: {fileID: 4217947544310884640}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -35,7 +36,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
   - {fileID: 2454794171323691476}
+=======
+  - {fileID: 9113710721723192411}
+  - {fileID: 4228745438731263318}
+>>>>>>> c273cc126921ba61c201d867daae7b3141ebd78e
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &316688696086569989
@@ -143,6 +149,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 408744462307795040}
+  - {fileID: 4217947544310884640}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -160,7 +167,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: MovementFeature.Infrastructure::_Root.MovementFeature.Infrastructure.MovementInstaller
   _movementAdapter: {fileID: 3451857818009504510}
   _movementConfig: {fileID: 11400000, guid: f8ef828309d0404499b45b44782243f0, type: 2}
+<<<<<<< HEAD
 --- !u!1 &737970277670402269
+=======
+--- !u!114 &4217947544310884640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216697392223168618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6effa3b0b841af9795607b6d688777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Root.InteractableFeature.InteractionChecker.CheckerInstaller
+  _interactionsDetector: {fileID: 2645072729013453352}
+--- !u!1 &2807480586866747555
+>>>>>>> c273cc126921ba61c201d867daae7b3141ebd78e
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,3 +274,84 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4831015062931510812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4228745438731263318}
+  - component: {fileID: 2645072729013453352}
+  - component: {fileID: 1837047043332020633}
+  m_Layer: 0
+  m_Name: Checker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4228745438731263318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831015062931510812}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4117354555104737963}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2645072729013453352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831015062931510812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab3405a888dd450a98dc68f2498a0010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_Root.InteractableFeature.InteractionChecker.InteractionsDetector
+--- !u!58 &1837047043332020633
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4831015062931510812}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 6.388842

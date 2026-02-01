@@ -18,6 +18,7 @@ namespace _Root.MovementFeature.Infrastructure
             Container.Bind<MovementModel>().FromInstance(_movementConfig.ToModel()).AsSingle().NonLazy();
             Container.Bind<MovementState>().AsSingle().NonLazy();
             Container.Bind<MovementUsecase>().AsSingle().NonLazy();
+            Container.Bind<ToggleMovementLockUseCase>().AsSingle().NonLazy();
             Container.Bind<MovementSystem>().AsSingle().Lazy();
 
             Container.BindInterfacesAndSelfTo<MovementAdapter>().FromInstance(_movementAdapter).AsSingle();

@@ -1,6 +1,7 @@
 using Zenject;
 using UnityEngine;
 using _Root.Player.Domain;
+using _Root.Player.Factory;
 
 namespace _Root.Player.Infrastructure
 {
@@ -12,17 +13,7 @@ namespace _Root.Player.Infrastructure
 
         public override void InstallBindings()
         {
-            Container.Bind<PlayerModel>()
-                .FromInstance(_playerConfig.ToModel())
-                .AsSingle()
-                .NonLazy();
-        }
-
-        public override void Start()
-        {
-            Player player = Container.InstantiatePrefabForComponent<Player>(_playerPrefab, _spawnPoint.position, Quaternion.identity, null);
-
-            Container.BindInterfacesAndSelfTo<Player>().FromInstance(player).AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle().WithArguments(_playerPrefab, _playerConfig).NonLazy();
         }
     }
 }

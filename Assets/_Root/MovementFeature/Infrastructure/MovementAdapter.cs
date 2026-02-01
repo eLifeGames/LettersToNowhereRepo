@@ -95,6 +95,11 @@ namespace _Root.MovementFeature.Infrastructure
             _playerSprite.flipX = dot < 0f;
         }
 
+        public void SetMovementLock(MovementLock movementLock)
+        {
+            _movementSystem.ToggleMovementLock(movementLock);
+        }
+
         #endregion
 
         public void Tick() => _movementSystem.OnTick();
