@@ -1,0 +1,10 @@
+﻿<Solution>
+  <Project Path="Zenject.csproj" />
+  <Project Path="Zenject-Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="MovementFeature.Domain.csproj" />
+  <Project Path="MovementFeature.Application.csproj" />
+  <Project Path="Shared.csproj" />
+  <Project Path="MovementFeature.Infrastructure.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+</Solution>

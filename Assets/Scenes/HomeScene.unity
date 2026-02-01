@@ -848,6 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b330d1e2ffe4930a7749c3b11f66f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Root.Player.Infrastructure.PlayerSpawner
+  _movementLockOnSpawn: 1
 --- !u!1 &1960038879
 GameObject:
   m_ObjectHideFlags: 0

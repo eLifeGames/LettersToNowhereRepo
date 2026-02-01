@@ -99,9 +99,8 @@ namespace _Root.MovementFeature.Infrastructure
         }
 
         public void SetMovementLock(MovementLock movementLock)
-        {
-            _movementSystem.ToggleMovementLock(movementLock);
-        }
+            => _movementSystem.ToggleMovementLock(movementLock);
+
 
         #endregion
 

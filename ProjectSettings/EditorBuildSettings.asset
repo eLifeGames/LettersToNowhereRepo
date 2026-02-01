@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MailScene.unity
     guid: e569db804d1cafc4386ad55ebd3c4bc5
+  - enabled: 1
+    path: Assets/Scenes/Openspace.unity
+    guid: 93b33e5e5f1afa146ad2be2cfc048680
+  - enabled: 1
+    path: Assets/Scenes/OpenspaceDev.unity
+    guid: 3262f2bf016e07445adc501d2e5a16f4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: aa2fda9122d5fca4ea4b823a43fa4a28, type: 3}
   m_UseUCBPForAssetBundles: 0

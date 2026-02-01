@@ -1,3 +1,5 @@
+using _Root.Shared.Ports.MovementFeature;
+
 namespace _Root.MovementFeature.Domain
 {
     public class MovementModel

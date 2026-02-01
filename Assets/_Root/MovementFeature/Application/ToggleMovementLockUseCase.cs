@@ -1,4 +1,5 @@
 ﻿using _Root.MovementFeature.Domain;
+using _Root.Shared.Ports.MovementFeature;
 
 namespace _Root.MovementFeature.Application
 {
@@ -12,8 +13,6 @@ namespace _Root.MovementFeature.Application
         }
 
         public void ToggleMovementLock(MovementLock movementLock)
-        {
-            _movementModel.SetMovementLock(movementLock);
-        }
+            => _movementModel.SetMovementLock(movementLock);
     }
 }

@@ -28,10 +28,9 @@ namespace _Root.InteractableFeature.InteractionChecker
             var interactable = GetClosestInteractable();
             
             // когда находим дверь и взаимодействуем с ней, вызываем событие о взаимодействии с дверью и передаем туда MovePort игрока
+            // REVIEW: Жестко прикована логика двери к детектору взаимодействий
             if (interactable != null && interactable.Transform.gameObject.TryGetComponent<DoorView>(out var doorView))
-            {
-                doorView.Interact(new DoorInteractionEvent(gameObject.GetComponentInParent<IMovePort>()));
-            }
+                doorView.Interact(new DoorInteractionEvent());
         }
 
         public void Dispose()

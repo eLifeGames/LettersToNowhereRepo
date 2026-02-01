@@ -5,13 +5,23 @@ using UnityEngine;
 namespace _Root.Shared.Ports.Player.Events
 {
     public abstract class PlayerEvent {}
-    public class PlayerSpawnEvent : PlayerEvent
+    public sealed class PlayerSpawnEvent : PlayerEvent
     {
-        public Vector3 SpawnPosition { get; }
+        public MovementLock MovementLockOnSpawn { get; }
 
-        public PlayerSpawnEvent(Vector3 spawnPosition)
+        public PlayerSpawnEvent(MovementLock movementLockOnSpawn)
         {
-            SpawnPosition = spawnPosition;
+            MovementLockOnSpawn = movementLockOnSpawn;
+        }
+    }
+
+    public sealed class PlayerReachedEndOfLocationEvent : PlayerEvent
+    {
+        public string TransitionZoneId { get; }
+
+        public PlayerReachedEndOfLocationEvent(string transitionZoneId)
+        {
+            TransitionZoneId = transitionZoneId;
         }
     }
 }
