@@ -15,4 +15,4 @@ MonoBehaviour:
   MaxSpeed: 2
   Acceleration: 5
   Decelration: 5
-  MovementLockSelection: 0
+  MovementLockSelection: 1

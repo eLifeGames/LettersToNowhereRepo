@@ -1,4 +1,4 @@
-﻿namespace _Root.MovementFeature.Domain
+﻿namespace _Root.Shared.Ports.MovementFeature
 {
     public enum MovementLock
     {

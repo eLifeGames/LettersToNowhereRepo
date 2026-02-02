@@ -8,7 +8,7 @@ namespace _Root.InteractableFeature.InteractionChecker
         [SerializeField] private InteractionsDetector _interactionsDetector;
         public override void InstallBindings()
         {
-            Container.Bind<InteractionsDetector>().FromInstance(_interactionsDetector).AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<InteractionsDetector>().FromInstance(_interactionsDetector).AsSingle().NonLazy();
         }
     }
 }

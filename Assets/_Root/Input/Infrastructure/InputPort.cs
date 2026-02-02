@@ -14,7 +14,7 @@ namespace _Root.Input.Infrastructure
         private InputActions.MotionActions _playerKeys;
         private InputActions.InteractionsActions _playerInteractKeys;
 
-        public event Action OnInteractionPressed = () => { };
+        public event Action OnInteractionPressed;
 
         public Vector2 MoveInput
         {

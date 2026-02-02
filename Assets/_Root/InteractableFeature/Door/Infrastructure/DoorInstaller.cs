@@ -12,7 +12,6 @@ namespace _Root.Player.Infrastructure
         public override void InstallBindings()
         {
             Container.Bind<DoorModel>().FromInstance(_doorConfig.ToModel()).AsSingle().NonLazy();
-            Container.Bind<ToggleMovementSetupUseCase>().AsSingle().NonLazy();
             Container.Bind<RequestTransitionUseCase>().AsSingle().NonLazy();
             Container.Bind<DoorView>().FromInstance(_doorView).AsSingle().NonLazy();
         }

@@ -1,8 +1,7 @@
-using _Root.MovementFeature.Domain;
 using _Root.Shared.Ports.Input;
 using _Root.Shared.Ports.MovementFeature;
-using UnityEngine;
-using Zenject;
+using _Root.Shared.Ports.Player;
+using _Root.Shared.Ports.Player.Events;
 
 namespace _Root.MovementFeature.Application
 {
@@ -16,18 +15,24 @@ namespace _Root.MovementFeature.Application
         public MovementSystem(
             MovementUsecase movementUsecase,
             IMovePort movePort,
-            IInputPort inputPort, ToggleMovementLockUseCase toggleMovementLock)
+            IInputPort inputPort,
+            ToggleMovementLockUseCase toggleMovementLock,
+            IPlayerEventProvider playerEventsProvider
+        )
         {
             _movementUsecase = movementUsecase;
             _movePort = movePort;
             _inputPort = inputPort;
             _toggleMovementLock = toggleMovementLock;
+            
+            playerEventsProvider.Subscribe<PlayerSpawnEvent>(OnPlayerSpawn);
         }
 
+        private void OnPlayerSpawn(PlayerSpawnEvent evt) =>
+            ToggleMovementLock(evt.MovementLockOnSpawn);
+
         public void ToggleMovementLock(MovementLock movementLock)
-        {
-            _toggleMovementLock.ToggleMovementLock(movementLock);
-        }
+            => _toggleMovementLock.ToggleMovementLock(movementLock);
 
         public void OnTick()
         {

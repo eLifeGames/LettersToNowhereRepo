@@ -1,6 +1,3 @@
-
-
-using _Root.MovementFeature.Domain;
 using UnityEngine;
 
 namespace _Root.Shared.Ports.MovementFeature

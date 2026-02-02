@@ -22,7 +22,6 @@ namespace _Root.MovementFeature.Infrastructure
             Container.Bind<MovementSystem>().AsSingle().Lazy();
 
             Container.BindInterfacesAndSelfTo<MovementAdapter>().FromInstance(_movementAdapter).AsSingle();
-            /// NOTE: Пока что так. Объяснил в /Assets/_Root/Player/Infrastructure/PlayerInstaller.cs
         }
     }
 }

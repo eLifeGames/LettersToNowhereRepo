@@ -1,4 +1,6 @@
 using _Root.MovementFeature.Domain;
+using _Root.Shared.Ports.MovementFeature;
+
 using UnityEngine;
 
 namespace _Root.MovementFeature.Infrastructure
@@ -17,12 +19,7 @@ namespace _Root.MovementFeature.Infrastructure
         [Tooltip("Movement Deceleration Speed Factor")]
         [field: Range(1f, 10f)] public float Decelration;
 
-        [Header("Other")]
-
-        [Tooltip("Selects direction player can move")]
-        public MovementLock MovementLockSelection;
-
         public MovementModel ToModel()
-            => new(MaxSpeed, Acceleration, Decelration, MovementLockSelection);
+            => new(MaxSpeed, Acceleration, Decelration);
     }
 }
